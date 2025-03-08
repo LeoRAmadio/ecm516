@@ -1,3 +1,131 @@
+// *** CLOSURES *** //
+
+// function eAgora(){
+//     let cont = 1
+//     function f1(){
+//         console.log(cont)
+//     }
+//     cont++
+//     function f2(){
+//         console.log(cont)
+//     }
+//     return {f1, f2}
+// }
+
+// const eAgoraResult = eAgora()
+// eAgoraResult.f1()
+// eAgoraResult.f2()
+
+// const saudacoesFactory = (saudacao,nome) => () => {console.log(`${saudacao}, ${nome}`)}
+
+// const saudacoesFactoryDireito = function(saudacao, nome){
+//     let b;
+//     return function(){
+//         console.log(`${saudacao}, ${nome}`)
+//     }
+// }
+
+// const olaJoao = saudacoesFactory('Ola', 'João')
+// const adeusJoao = saudacoesFactory('Adeus', 'João')
+// olaJoao()
+// adeusJoao()
+
+// function ola() {
+//     let nome = 'João'
+//     return function() {
+//         console.log(`Olá, ${nome}`)
+//     }
+// }
+
+// ola()()
+
+// function f(){
+//     let nome = 'João'
+//     function g(){
+//         console.log(nome)
+//     }
+//     g()
+// }
+
+// function f(funcao){
+//      funcao()
+// }
+
+// function g(){
+//     function outraFuncao(){
+//         console.log('Fui criada por g')
+//     }
+//     return outraFuncao
+// }
+
+// const gResult = g()
+// gResult()
+
+// f(g())
+
+// g()()
+
+// f(g()())
+
+//console.log(f(g()()))
+// f(function(){console.log('Fui passada para f')})
+
+// let umaFuncao = function(){
+//     console.log('Fui armazenada em uma variável')
+// }
+// umaFuncao()
+
+
+
+console.log('----')
+// *** PROGRAMAÇÃO IMPERATIVA *** //
+
+// const nomes = ['Ana Maria', 'Antonio', 'Leonardo', 'Alex', 'Cristina']
+
+//produza um novo vetor que, para cada elemento do vetor nomes, contenha a sua letra inicial
+// let vetor = []
+// for (const nome of nomes){
+//     vetor.push(nome.charAt(0))
+// }
+// console.log(vetor)
+
+//produza um novo vetor que contenha os nomes que começam com A
+//faça usando um for
+// let vet = []
+// for(const nome of nomes){
+//     if (nome.charAt(0) === 'A'){
+//         vet.push(nome)
+//     }
+// }
+// console.log(vet)
+
+console.log('----')
+
+// *** PROGRAMAÇÃO DECLARATIVA *** //
+
+// const valores = [1,2,3,4]
+// const soma = valores.reduce((ac, v) => ac + v)
+// console.log(soma)
+
+// const resultado = nomes.every(n => n.startsWith('A'))
+// console.log(resultado)
+
+// const resultado = nomes.some(n => n.startsWith('A'))
+// console.log(resultado)
+
+// const resultante_2 = nomes.map(function(n){
+//     return n[0]
+// })
+// console.log(resultante_2)
+
+// //faça usando filter
+// const resultante = nomes.filter((nome) => nome.startsWith('A') | nome.startsWith('a')) // O(1)
+// //OU
+// const resultante_1 = nomes.filter(n => n.toLowerCase().startsWith('a')) // O(n)
+
+// console.log(resultante)
+
+console.log('----')
 // *** ARROW FUNCTIONS *** //
 // const hello = () => console.log("Hello")
 // hello()
