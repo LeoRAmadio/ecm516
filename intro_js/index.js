@@ -1,3 +1,131 @@
+//processamento síncrono (bloqueante) e processamento assíncrono (não bloqueante)
+
+// //síncrono
+// const oi = () => console.log('oi')
+
+// console.log('Começou')
+// oi()
+// console.log('Terminou')
+ 
+//assíncrono ; debugando é mais facil de ver
+const fs = require('fs')
+const abrirArquivo = function(nomeArquivo){
+    const exibirConteudo = function(erro, conteudo){
+        if(erro){
+            console.log(`Deu erro: ${erro}`)
+        }
+        else{
+            console.log(`Funcionou: ${conteudo.toString()}`)
+            const dobro = Number(conteudo.toString()) * 2
+            const finalizar = (erro) => {
+                if(erro)
+                    console.log(`A escrita deu erro ${erro}`)
+                else
+                    console.log('A escrita funcionou')
+            }
+            fs.writeFile('dobro.txt', dobro.toString(), finalizar)
+
+        }
+    } //callback
+    //assincrona
+    fs.readFile(nomeArquivo, exibirConteudo)
+    console.log('Fim da função exibirConteudo')
+}
+
+abrirArquivo("arquivo.txt")
+
+//IO-Bound: Input/Output
+
+
+console.log("----")
+// *** JSON *** //
+//uma pessoa que se chama João e tem 17 anos
+// const pessoa = {
+//     nome: "João",
+//     idade: 17
+// }
+
+// console.log(pessoa.nome)
+// console.log(pessoa['idade'])
+
+//uma pessoa se chama Maria, tem 21 anos e mora na Rua B, numero 121, bairro J
+
+// const pessoa = {
+//     nome: "Maria",
+//     idade: 21,
+//     endereco: {
+//         logradouro: "B",
+//         numero: 121,
+//         bairro: {
+//             nome: "J"
+//         },
+//         cidade: {
+//             nome: "Itu",
+//             populacao: 70000
+//         }
+//     }
+// }
+
+// console.log(pessoa.endereco.bairro.nome)
+// console.log(pessoa['endereco']['cidade']['populacao'])
+
+// uma concessionaria tem CNPJ e endereco. Ela possui alguns carros. cada carro tem marca, modelo, e ano de fabricacao
+// const concessionaria = {
+//     cnpj: "123456",
+//     endereco: {
+//         logradouro: "Rua B",
+//         numero: 121
+        
+//     },
+//     veiculos: [
+//         {
+//             marca: "X",
+//             modelo: "W",
+//             fabricacao: 2020
+//         },
+//         {
+//             marca: "V",
+//             modelo: "Z",
+//             fabricacao: 2022
+//         },
+//         {
+//             marca: "GM",
+//             modelo: "Tracker",
+//             fabricacao: 2025
+//         }
+//     ]
+// }
+
+// console.log(concessionaria.veiculos[2].modelo)
+
+// for (let i = 0; i < concessionaria.veiculos.length; i++){
+//     console.log(concessionaria.veiculos[i])
+// }
+
+// for (let veiculo of concessionaria.veiculos){
+//     console.log(veiculo)
+// }
+
+// uma calculadora que faz as operacoes de soma e subtracao, cada uma envolvendo apenas dois operandos
+//1. A soma deve ser feita com uma funcao regular(function)
+//2. A subtracao deve ser feita com uma arrow function cujo corpo não pode ter nem {} e nem return
+//no final, mostre ela em funcionamento, ou seja, some 2 com 3 e subtraia 3 de 5
+
+
+// const calculadora = {
+ 
+//     soma: function(a, b) { return a + b},
+//     subtracao: (a, b) => a - b
+
+// }
+ 
+// console.log(calculadora.soma(2,3))
+// console.log(calculadora.subtracao(5,3))
+
+// const armazenaSoma = calculadora.soma
+// console.log(armazenaSoma(4,5))
+
+console.log('----')
 // *** CLOSURES *** //
 
 // function eAgora(){
