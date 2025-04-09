@@ -17,6 +17,8 @@ const eAgoraResult = eAgora();
 eAgoraResult.f1(); // 1
 eAgoraResult.f2(); // 2
 
+//eAgora -> funcao de alta ordem (retorna f1 e f2) ; f1 e f2 -> funcaoes de primeira classe (retornadas como valores de eAgora)
+
 // Fábrica de funções que retorna uma função que imprime uma saudação
 const saudacoesFactory = (saudacao, nome) => () => {
     console.log(`${saudacao}, ${nome}`);
@@ -97,3 +99,5 @@ umaFuncao();
 
 //Funções retornando funções (g(), gResult(), etc.) reforçam a ideia de 
 // que funções podem ser passadas como valores e armazenadas.
+
+//Quando e porque usar closure? 

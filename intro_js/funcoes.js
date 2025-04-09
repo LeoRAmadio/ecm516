@@ -42,8 +42,8 @@ console.log(triplo(10)); // 30 (usa o valor passado)
 // ***************** ARROW FUNCTIONS *****************//
 
 // Arrow function sem parâmetros
-const hello = () => console.log("Hello");
-hello(); // Hello
+const helloArrow = () => console.log("Hello");
+helloArrow(); // Hello
 
 // Arrow function com um parâmetro e retorno implícito
 const dobroArrow = (valor) => valor * 2;

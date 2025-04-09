@@ -22,8 +22,8 @@ console.log(`Até mais, ${nome}.`);
 
 //Declarando constantes (imutáveis):
 const nome1 = 'José'
-const idade = 27
-console.log(nome1, idade)
+const idade1 = 27
+console.log(nome1, idade1)
 
 // Hoisting é um comportamento do JavaScript que move declarações de variáveis e funções para o 
 // topo do escopo durante a compilação.
@@ -32,6 +32,9 @@ console.log(nome1, idade)
 // do if ainda existe fora dele. Isso pode levar a comportamentos inesperados.
 
 //Preferivel usar let ou const
+
+// Quando usar let ou const? ; porque nao usar var? ; 
+// Quando nao uso palavras reservadas para declarar uma variavel, qual palavra reservada é usada implicitamente?
 
 console.log('-----------------------------------------------------------')
 

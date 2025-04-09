@@ -93,3 +93,5 @@ resultado4
 // Uso de ternário (? :) evita if/else, útil em funções funcionais/declarativas.
 
 // Encadeamento (.then().then().catch()) pode se tornar confuso — prefira async/await para evitar o "Hadouken" (código empurrado pra direita).
+
+//Qual o problema que a promise resolve, referente ao callback hell? 
