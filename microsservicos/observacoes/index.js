@@ -1,3 +1,5 @@
+// Pagina 40 é importante
+const axios = require('axios')
 const express = require('express')
 const { v4: uuidv4 } = require('uuid')
 const app = express()
@@ -42,7 +44,7 @@ app.get('/lembretes/:idLembrete/observacoes', (req, res) => {
 }) //req -> requisicao ; res -> response
 
 
-app.post('/lembretes/:idLembrete/observacoes', (req, res) =>{
+app.post('/lembretes/:idLembrete/observacoes', async (req, res) =>{
 
     const idObservacao = uuidv4()
     const { texto } = req.body
@@ -56,8 +58,19 @@ app.post('/lembretes/:idLembrete/observacoes', (req, res) =>{
     const observacoes = (baseObservacoes[idLembrete] || [])
     observacoes.push(observacao)
     baseObservacoes[idLembrete] = observacoes
+    //Emite um evento dizendo que uma observacao foi criada
+    await axios.post('http://localhost:10000/eventos', {
+        tipo: "ObservacaoCriada",
+        dados: observacao
+    })
     res.status(201).json(observacoes)
 
+})
+
+app.post('/eventos', (req, res) => {
+    const evento = req.body
+    console.log(evento)
+    res.end()
 })
 
 const port = 5000
